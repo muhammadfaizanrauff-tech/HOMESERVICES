@@ -55,7 +55,7 @@ export default function Footer() {
               {CONTACT_EMAIL}
             </a>
             <p className="text-xs text-gray-500 mt-4">
-              Powered by Rep Stack · Built for the trades.
+              Powered by Our Team · Built for the trades.
             </p>
           </div>
         </div>

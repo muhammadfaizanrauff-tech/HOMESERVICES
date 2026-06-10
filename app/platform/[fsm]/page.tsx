@@ -66,7 +66,7 @@ const PLATFORM_COPY: Record<string, { headline: string; sub: string; bullets: st
       "Full GHL migration — more features, same monthly budget or less",
       "12 automation modules vs. basic sequences",
       "Native FSM bridge for ServiceTitan, Jobber, or HCP",
-      "Done-for-you build by Rep Stack — live in 5–7 days",
+      "Done-for-you build by Our Team — live in 5–7 days",
     ],
     track: "B_migrate",
   },

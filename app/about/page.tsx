@@ -67,7 +67,7 @@ export default function AboutPage() {
             {
               icon: <Zap size={32} className="text-orange-brand" />,
               title: "Done-for-you build",
-              body: "Our build team (Rep Stack) handles every bit of setup, integration, and testing. You touch nothing.",
+              body: "Our team handles every bit of setup, integration, and testing. You touch nothing.",
             },
             {
               icon: <Bot size={32} className="text-orange-brand" />,
@@ -89,12 +89,12 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <Eyebrow>THE PARTNERSHIP</Eyebrow>
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">
-            Strategy by ChrisAlchemy. Build by Rep Stack.
+            Strategy and build — all done for you.
           </h2>
           <p className="text-gray-body text-lg leading-relaxed">
-            ChrisAlchemy owns your strategy, onboarding, and relationship. Our fulfillment
-            partner Rep Stack handles all technical buildout, integrations, and ongoing support
-            — so everything is done for you, fast and right.
+            ChrisAlchemy owns your strategy, onboarding, and relationship. Our team handles
+            all technical buildout, integrations, and ongoing support — so everything is done
+            for you, fast and right.
           </p>
         </div>
       </Section>

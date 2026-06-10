@@ -46,7 +46,7 @@ export default function HomePage() {
             </Button>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
-            Powered by Rep Stack · Live in 5–7 days ·{" "}
+            Powered by Our Team · Live in 5–7 days ·{" "}
             <span className="italic block sm:inline">Built for the field, not just the funnel.</span>
           </p>
         </div>
@@ -217,7 +217,7 @@ export default function HomePage() {
             {
               icon: <Zap size={32} className="text-orange-brand" />,
               title: "Done-for-you build",
-              body: "Our build team (Rep Stack) handles every bit of setup, integration, and testing. You touch nothing.",
+              body: "Our build team (Our Team) handles every bit of setup, integration, and testing. You touch nothing.",
             },
             {
               icon: <Bot size={32} className="text-orange-brand" />,
@@ -272,7 +272,7 @@ export default function HomePage() {
           {[
             { n: "1", title: "Book a demo or pick a plan", body: "Choose your path — schedule a free demo or go straight to a plan." },
             { n: "2", title: "Quick 20-min onboarding call", body: "We confirm your integrations, preferences, and go-live checklist." },
-            { n: "3", title: "Our team builds + connects everything", body: "Rep Stack handles every setup detail. You don't touch a thing." },
+            { n: "3", title: "Our team builds + connects everything", body: "Our Team handles every setup detail. You don't touch a thing." },
             { n: "4", title: "You start recovering jobs", body: "System goes live in 5–7 business days. Jobs that used to slip start coming back." },
           ].map((step) => (
             <div key={step.n} className="relative">
