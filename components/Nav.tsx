@@ -21,8 +21,13 @@ export default function Nav() {
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link href="/" className="text-white font-extrabold text-xl tracking-tight shrink-0">
-            Chris<span className="text-orange-brand">Alchemy</span>
+          <Link href="/" className="flex flex-col leading-none shrink-0">
+            <span className="text-white font-extrabold text-xl tracking-tight uppercase">
+              Home <span className="text-orange-brand">Services</span>
+            </span>
+            <span className="text-gray-400 text-[10px] font-medium tracking-wide">
+              By Chris Alchemy Consulting
+            </span>
           </Link>
 
           {/* Desktop nav */}

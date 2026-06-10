@@ -16,8 +16,13 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
           <div>
-            <div className="text-white font-extrabold text-xl tracking-tight mb-3">
-              Chris<span className="text-orange-brand">Alchemy</span>
+            <div className="flex flex-col leading-none mb-3">
+              <span className="text-white font-extrabold text-xl tracking-tight uppercase">
+                Home <span className="text-orange-brand">Services</span>
+              </span>
+              <span className="text-gray-500 text-[10px] font-medium tracking-wide mt-0.5">
+                By Chris Alchemy Consulting
+              </span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
               {TAGLINE}
