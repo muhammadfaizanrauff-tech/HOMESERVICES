@@ -65,7 +65,7 @@ export default function PricingCard({ plan, compact = false }: PricingCardProps)
         )}
 
         <Link
-          href={`/checkout/form?plan=${plan.id}`}
+          href={`/qualify?plan=${plan.id}`}
           className={`mt-auto w-full text-center font-semibold py-3.5 px-6 rounded-lg transition-colors text-base ${
             plan.popular
               ? "bg-orange-brand text-white hover:bg-orange-brand-hover"
