@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import ThankYouClient from "./ThankYouClient";
 
 export const metadata: Metadata = {
-  title: "Your Build Plan Is Ready — ChrisAlchemy",
+  title: "Your Build Plan Is Ready: ChrisAlchemy",
   description: "Based on your answers, here's exactly what we'd set up for your business.",
 };
 

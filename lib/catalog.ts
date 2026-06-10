@@ -21,7 +21,7 @@ export const FSM_LABELS: Record<string, string> = {
 };
 
 export const FSM_DESCRIPTIONS: Record<string, string> = {
-  servicetitan:  "We integrate on top — nothing changes",
+  servicetitan:  "We integrate on top. Nothing changes",
   jobber:        "We bolt AI follow-up on top, or migrate you off",
   housecall_pro: "We bolt AI follow-up on top, or migrate you off",
   chiirp:        "We consolidate into a more powerful GHL build",
@@ -30,18 +30,18 @@ export const FSM_DESCRIPTIONS: Record<string, string> = {
 };
 
 export const TECH_BAND_LABELS: Record<string, string> = {
-  "1-2":  "1–2 techs",
-  "3-4":  "3–4 techs",
-  "5-10": "5–10 techs",
-  "11-20":"11–20 techs",
+  "1-2":  "1 to 2 techs",
+  "3-4":  "3 to 4 techs",
+  "5-10": "5 to 10 techs",
+  "11-20":"11 to 20 techs",
   "20+":  "20+ techs",
 };
 
 export const DEPTH_LABELS: Record<string, string> = {
-  none:     "Barely — just set it up",
-  light:    "Basic — invoices & scheduling",
-  moderate: "Moderate — dispatch + some tracking",
-  deep:     "Deep — can't run a day without it",
+  none:     "Barely. Just set it up",
+  light:    "Basic: invoices & scheduling",
+  moderate: "Moderate: dispatch + some tracking",
+  deep:     "Deep. Can't run a day without it",
 };
 
 export const PAIN_LABELS: Record<string, string> = {
@@ -74,11 +74,11 @@ export const TRACK_DESCRIPTIONS: Record<string, string> = {
   A_full_build:
     "No CRM yet? We build your complete all-in-one growth system from scratch.",
   B_integrate:
-    "Already on ServiceTitan, Jobber, or HouseCall Pro? We bolt AI follow-up on top — zero disruption to your team.",
+    "Already on ServiceTitan, Jobber, or HouseCall Pro? We bolt AI follow-up on top. Zero disruption to your team.",
   B_migrate:
     "Small shop with light platform use? We replace it with something more powerful and more affordable.",
   disqualify:
-    "We may not be the right fit right now — but we'll point you in the right direction.",
+    "We may not be the right fit right now, but we'll point you in the right direction.",
 };
 
 export const TIER_LABELS: Record<string, string> = {

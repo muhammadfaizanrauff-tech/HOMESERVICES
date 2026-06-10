@@ -38,7 +38,7 @@ export default function ServicesPage() {
             Everything you need to capture, book, and keep more customers.
           </h1>
           <p className="text-gray-300 text-lg max-w-2xl mx-auto mb-8">
-            12 automation modules. 3 plans. One system that runs itself — built and managed for you.
+            12 automation modules. 3 plans. One system that runs itself, built and managed for you.
           </p>
           <Button href="/demo/calendar" size="lg">
             Book a Demo
@@ -138,7 +138,7 @@ export default function ServicesPage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           <div className="bg-gray-light rounded-xl border border-gray-200 p-7">
             <div className="text-xs font-bold uppercase tracking-widest text-green-brand mb-3">
-              Track A — Start Fresh
+              Track A: Start Fresh
             </div>
             <h3 className="text-xl font-bold text-navy mb-3">No CRM yet?</h3>
             <p className="text-gray-muted leading-relaxed">
@@ -148,13 +148,13 @@ export default function ServicesPage() {
           </div>
           <div className="bg-gray-light rounded-xl border border-gray-200 p-7">
             <div className="text-xs font-bold uppercase tracking-widest text-blue-brand mb-3">
-              Track B — Add the AI Layer
+              Track B: Add the AI Layer
             </div>
             <h3 className="text-xl font-bold text-navy mb-3">
               Already on a platform?
             </h3>
             <p className="text-gray-muted leading-relaxed">
-              We bolt an AI follow-up layer on top — no switching, no disruption to your team.
+              We bolt an AI follow-up layer on top. No switching, no disruption to your team.
             </p>
           </div>
         </div>
@@ -168,7 +168,7 @@ export default function ServicesPage() {
             Works with what you already run.
           </h2>
           <p className="text-gray-muted">
-            We add the AI layer on top — or migrate you to a full system. Your call.
+            We add the AI layer on top, or migrate you to a full system. Your call.
           </p>
         </div>
         <div className="flex flex-wrap gap-4 justify-center">

@@ -8,7 +8,7 @@ export default function CTABanner() {
           Ready to stop losing jobs?
         </h2>
         <p className="text-gray-300 text-lg mb-8 max-w-xl mx-auto">
-          An AI follow-up system built for the trades. Done for you. Live in 5–7
+          An AI follow-up system built for the trades. Done for you. Live in 5 to 7
           days.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">

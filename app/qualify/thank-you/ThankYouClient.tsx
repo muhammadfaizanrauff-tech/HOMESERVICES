@@ -37,11 +37,11 @@ export default function ThankYouClient() {
       <div className="max-w-lg mx-auto px-4 py-16 text-center">
         <div className="text-5xl mb-6">🤝</div>
         <h1 className="text-2xl font-bold text-white mb-4">
-          We may not be the right fit right now — but you shouldn&apos;t leave empty-handed.
+          We may not be the right fit right now, but you shouldn&apos;t leave empty-handed.
         </h1>
         <p className="text-gray-400 mb-8">
           We&apos;ll send you a free resource on what top home-services operators are doing to
-          capture more leads — no automation required.
+          capture more leads. No automation required.
         </p>
         <Link href="/" className="text-orange-brand hover:underline text-sm">
           ← Back to home
@@ -86,8 +86,8 @@ export default function ThankYouClient() {
         <div className="mb-6">
           <h2 className="text-white font-bold text-lg mb-4">
             {isHot
-              ? "We're ready to move — grab a time and we'll map it all out."
-              : "Book a free 20-minute call — we'll walk through exactly what we'd build."}
+              ? "We're ready to move. Grab a time and we'll map it all out."
+              : "Book a free 20-minute call. We'll walk through exactly what we'd build."}
           </h2>
 
           {bookingUrl ? (
@@ -111,7 +111,7 @@ export default function ThankYouClient() {
           <ul className="space-y-2 text-sm text-gray-400">
             {[
               "A breakdown is heading to your inbox now.",
-              "The call is 20 minutes — no pitch, just a plan.",
+              "The call is 20 minutes. No pitch, just a plan.",
               "You'll leave knowing exactly what we'd build and what it costs.",
             ].map((s) => (
               <li key={s} className="flex items-start gap-2">

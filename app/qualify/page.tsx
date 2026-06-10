@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import QualifierClient from "./QualifierClient";
 
 export const metadata: Metadata = {
-  title: "See If It's a Fit — ChrisAlchemy",
+  title: "See If It's a Fit: ChrisAlchemy",
   description:
     "Answer 4 quick questions and we'll show you exactly which AI automation setup fits your home-services business. Takes about 2 minutes.",
 };

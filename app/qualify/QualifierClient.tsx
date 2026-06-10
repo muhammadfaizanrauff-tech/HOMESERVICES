@@ -256,7 +256,7 @@ export default function QualifierClient() {
 
       router.push(`/qualify/thank-you?${query.toString()}`);
     } catch {
-      setError("Something went wrong — please try again.");
+      setError("Something went wrong, please try again.");
       setSubmitting(false);
     }
   }
@@ -319,7 +319,7 @@ export default function QualifierClient() {
             {/* Pre-handle top objection for ST users */}
             {answers.fsmPlatform === "servicetitan" && (
               <p className="mt-4 text-xs text-orange-brand/80 bg-orange-brand/10 rounded-lg px-4 py-2">
-                Your techs never touch anything new — we add on top of ServiceTitan, nothing changes for them.
+                Your techs never touch anything new. We add on top of ServiceTitan, nothing changes for them.
               </p>
             )}
           </Step>
@@ -349,7 +349,7 @@ export default function QualifierClient() {
             </div>
             {noReplacePlatform && (
               <p className="mt-4 text-xs text-orange-brand/80 bg-orange-brand/10 rounded-lg px-4 py-2">
-                Your techs keep working exactly as they do — we add the AI layer on top.
+                Your techs keep working exactly as they do. We add the AI layer on top.
               </p>
             )}
           </Step>
@@ -372,7 +372,7 @@ export default function QualifierClient() {
 
         {currentStep === "details" && (
           <Step
-            heading="Tell us a bit more — even a sentence helps."
+            heading="Tell us a bit more. Even a sentence helps."
             sub="Optional but useful. The more context, the more personalized the call."
           >
             {/* Provisional fit card */}
@@ -415,7 +415,7 @@ export default function QualifierClient() {
                   />
                 </div>
                 <p className="text-xs text-gray-500 mt-1">
-                  Helps us show you the ROI math — most owners recover 3–5 jobs/month.
+                  Helps us show you the ROI math. Most owners recover 3 to 5 jobs/month.
                 </p>
               </div>
             </div>
@@ -457,7 +457,7 @@ export default function QualifierClient() {
 
         {currentStep === "contact" && (
           <Step
-            heading="Last step — where should we send your breakdown?"
+            heading="Last step: where should we send your breakdown?"
             sub="We'll send a custom build plan based on everything you've told us."
           >
             <div className="space-y-4">
@@ -489,7 +489,7 @@ export default function QualifierClient() {
                     onChange={(e) => set("consentSms", e.target.checked)}
                     className="mt-1 accent-orange-brand w-4 h-4 shrink-0" />
                   <span className="text-xs text-gray-400 leading-relaxed">
-                    <strong className="text-white">Yes</strong> — I agree to receive calls and texts
+                    <strong className="text-white">Yes</strong>. I agree to receive calls and texts
                     from ChrisAlchemy Consulting about my inquiry. I understand I can opt out at any time. *
                   </span>
                 </label>

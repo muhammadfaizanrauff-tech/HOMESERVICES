@@ -10,9 +10,9 @@ import { plans } from "@/content/plans";
 import { faqs } from "@/content/faqs";
 
 export const metadata: Metadata = {
-  title: "ChrisAlchemy Consulting — Stop Losing Jobs to Missed Calls",
+  title: "ChrisAlchemy Consulting: Stop Losing Jobs to Missed Calls",
   description:
-    "ChrisAlchemy adds an AI-powered follow-up, booking, and review system to your HVAC, plumbing, or home services business. Done for you. Live in 5–7 days.",
+    "ChrisAlchemy adds an AI-powered follow-up, booking, and review system to your HVAC, plumbing, or home services business. Done for you. Live in 5 to 7 days.",
 };
 
 export default function HomePage() {
@@ -29,12 +29,12 @@ export default function HomePage() {
           </h1>
           <p className="text-gray-300 text-base md:text-xl max-w-2xl mb-8 leading-relaxed">
             Speed-to-lead, missed-call text-back, estimate follow-up, and customer
-            reactivation — deployed on top of ServiceTitan, Jobber, HouseCall Pro, or built
-            from scratch if you have nothing. Our team handles everything. Live in 5–7 days.
+            reactivation, deployed on top of ServiceTitan, Jobber, HouseCall Pro, or built
+            from scratch if you have nothing. Our team handles everything. Live in 5 to 7 days.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 mb-8">
             <Button href="/qualify" size="lg">
-              See if it&apos;s a fit — 2 minutes
+              See if it&apos;s a fit in 2 minutes
             </Button>
             <Button
               href="/demo/calendar"
@@ -46,7 +46,7 @@ export default function HomePage() {
             </Button>
           </div>
           <p className="text-gray-400 text-sm leading-relaxed">
-            Powered by Our Team · Live in 5–7 days ·{" "}
+            Powered by Our Team · Live in 5 to 7 days ·{" "}
             <span className="italic block sm:inline">Built for the field, not just the funnel.</span>
           </p>
         </div>
@@ -58,7 +58,7 @@ export default function HomePage() {
           Every week, jobs slip through the cracks.
         </h2>
         <p className="text-center text-gray-muted mb-10 max-w-xl mx-auto">
-          Most owners we talk to lose 3–5 jobs a month to exactly these gaps.
+          Most owners we talk to lose 3 to 5 jobs a month to exactly these gaps.
         </p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
@@ -70,7 +70,7 @@ export default function HomePage() {
             {
               icon: <FileText size={28} className="text-orange-brand" />,
               title: "Cold quotes",
-              body: "You send an estimate and never follow up — it goes silent.",
+              body: "You send an estimate and never follow up. It goes silent.",
             },
             {
               icon: <Users size={28} className="text-orange-brand" />,
@@ -98,7 +98,7 @@ export default function HomePage() {
             An AI follow-up engine that runs itself.
           </h2>
           <p className="text-gray-muted text-lg leading-relaxed">
-            We deploy a pre-built GoHighLevel automation system — 12 modules covering
+            We deploy a pre-built GoHighLevel automation system: 12 modules covering
             speed-to-lead, missed-call text-back, 24/7 AI voice, review generation, estimate
             follow-up, reactivation and more. It connects to your existing field software so
             automations fire on real job data, not form fills.
@@ -138,7 +138,7 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-7">
             <div className="text-xs font-bold uppercase tracking-widest text-green-brand mb-3">
-              Track A — Start Fresh
+              Track A: Start Fresh
             </div>
             <h3 className="text-xl font-bold text-navy mb-3">No CRM yet?</h3>
             <p className="text-gray-muted leading-relaxed">
@@ -148,13 +148,13 @@ export default function HomePage() {
           </div>
           <div className="bg-white rounded-xl border border-gray-200 shadow-sm p-7">
             <div className="text-xs font-bold uppercase tracking-widest text-blue-brand mb-3">
-              Track B — Add the AI Layer
+              Track B: Add the AI Layer
             </div>
             <h3 className="text-xl font-bold text-navy mb-3">
               Already on ServiceTitan, Jobber, or HouseCall Pro?
             </h3>
             <p className="text-gray-muted leading-relaxed">
-              We bolt an AI follow-up layer on top — no switching, no disruption to your team.
+              We bolt an AI follow-up layer on top. No switching, no disruption to your team.
             </p>
           </div>
         </div>
@@ -173,7 +173,7 @@ export default function HomePage() {
             Outcomes built into the system.
           </h2>
           <p className="text-gray-400 text-sm">
-            What automation like this delivers — benchmark outcomes from comparable deployments.
+            What automation like this delivers. Benchmark outcomes from comparable deployments.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
@@ -204,7 +204,7 @@ export default function HomePage() {
         <div className="text-center mb-10">
           <Eyebrow>WHY US</Eyebrow>
           <h2 className="text-3xl md:text-4xl font-bold text-navy">
-            We connect to the field — not just the funnel.
+            We connect to the field, not just the funnel.
           </h2>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -270,10 +270,10 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
           {[
-            { n: "1", title: "Book a demo or pick a plan", body: "Choose your path — schedule a free demo or go straight to a plan." },
+            { n: "1", title: "Book a demo or pick a plan", body: "Choose your path: schedule a free demo or go straight to a plan." },
             { n: "2", title: "Quick 20-min onboarding call", body: "We confirm your integrations, preferences, and go-live checklist." },
             { n: "3", title: "Our team builds + connects everything", body: "Our Team handles every setup detail. You don't touch a thing." },
-            { n: "4", title: "You start recovering jobs", body: "System goes live in 5–7 business days. Jobs that used to slip start coming back." },
+            { n: "4", title: "You start recovering jobs", body: "System goes live in 5 to 7 business days. Jobs that used to slip start coming back." },
           ].map((step) => (
             <div key={step.n} className="relative">
               <div className="w-12 h-12 rounded-full bg-orange-brand text-white font-extrabold text-xl flex items-center justify-center mb-4">

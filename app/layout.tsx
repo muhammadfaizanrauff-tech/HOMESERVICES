@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "ChrisAlchemy Consulting — AI Automation for Home Services",
+    default: "ChrisAlchemy Consulting: AI Automation for Home Services",
     template: "%s | ChrisAlchemy Consulting",
   },
   description:
@@ -29,9 +29,9 @@ export const metadata: Metadata = {
     "field service automation",
   ],
   openGraph: {
-    title: "ChrisAlchemy Consulting — AI Automation for Home Services",
+    title: "ChrisAlchemy Consulting: AI Automation for Home Services",
     description:
-      "Stop losing 3–5 jobs a month to missed calls and dead leads. The GHL layer built for the field, not just the funnel.",
+      "Stop losing 3 to 5 jobs a month to missed calls and dead leads. The GHL layer built for the field, not just the funnel.",
     type: "website",
     locale: "en_US",
     siteName: "ChrisAlchemy Consulting",

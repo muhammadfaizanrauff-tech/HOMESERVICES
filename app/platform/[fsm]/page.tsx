@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const label = FSM_LABELS[fsm];
   if (!label) return {};
   return {
-    title: `${label} + AI Automation — ChrisAlchemy`,
+    title: `${label} + AI Automation: ChrisAlchemy`,
     description: FSM_DESCRIPTIONS[fsm] ?? `AI follow-up and automation on top of ${label}.`,
   };
 }
@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
 const PLATFORM_COPY: Record<string, { headline: string; sub: string; bullets: string[]; track: string }> = {
   servicetitan: {
     headline: "Still on ServiceTitan? Here's the AI layer it was never built to include.",
-    sub: "ServiceTitan handles your operations. We add automated follow-up, review collection, and customer reactivation on top — triggered by real ST job events, not form fills. Your team changes nothing.",
+    sub: "ServiceTitan handles your operations. We add automated follow-up, review collection, and customer reactivation on top, triggered by real ST job events, not form fills. Your team changes nothing.",
     bullets: [
       "Speed-to-lead SMS fires when a new ST lead comes in",
       "Review requests trigger when a job is marked complete in ST",
@@ -38,7 +38,7 @@ const PLATFORM_COPY: Record<string, { headline: string; sub: string; bullets: st
     track: "B_integrate",
   },
   jobber: {
-    headline: "Already on Jobber? We either bolt AI on top — or replace it with something more powerful.",
+    headline: "Already on Jobber? We either bolt AI on top, or replace it with something more powerful.",
     sub: "Small crew with light Jobber usage? We migrate you to a full GHL system that does more for less. Bigger operation? We add the AI follow-up layer on top without disrupting a thing.",
     bullets: [
       "Missed-call text-back: respond in 30 seconds, every time",
@@ -49,30 +49,30 @@ const PLATFORM_COPY: Record<string, { headline: string; sub: string; bullets: st
     track: "B_integrate or B_migrate depending on your situation",
   },
   housecall_pro: {
-    headline: "HouseCall Pro + AI follow-up — the combination that grows revenue without adding headcount.",
-    sub: "We add automated lead follow-up, review collection, and customer reactivation on top of HouseCall Pro — or migrate small shops into a single, more powerful platform.",
+    headline: "HouseCall Pro + AI follow-up: the combination that grows revenue without adding headcount.",
+    sub: "We add automated lead follow-up, review collection, and customer reactivation on top of HouseCall Pro, or migrate small shops into a single, more powerful platform.",
     bullets: [
       "Speed-to-lead SMS fires on new HCP leads",
       "Missed calls get an instant text-back",
-      "Quotes follow up automatically — 6 touches until won or closed",
+      "Quotes follow up automatically: 6 touches until won or closed",
       "Past customers get seasonal re-engagement sequences",
     ],
     track: "B_integrate or B_migrate",
   },
   chiirp: {
     headline: "Already automation-minded? You're halfway there. Let's finish the build.",
-    sub: "Chiirp users get it. You know automation is the play — we just build it properly inside GoHighLevel with the full stack of follow-up, booking, and review modules.",
+    sub: "Chiirp users get it. You know automation is the play. We just build it properly inside GoHighLevel with the full stack of follow-up, booking, and review modules.",
     bullets: [
-      "Full GHL migration — more features, same monthly budget or less",
+      "Full GHL migration: more features, same monthly budget or less",
       "12 automation modules vs. basic sequences",
       "Native FSM bridge for ServiceTitan, Jobber, or HCP",
-      "Done-for-you build by Our Team — live in 5–7 days",
+      "Done-for-you build by Our Team. Live in 5 to 7 days.",
     ],
     track: "B_migrate",
   },
   none: {
     headline: "No CRM yet? We build your whole growth system from scratch.",
-    sub: "Most of the home-services businesses we talk to are still running on spreadsheets or nothing. We set up GoHighLevel as your all-in-one platform — lead capture, booking, follow-up, reviews, everything.",
+    sub: "Most of the home-services businesses we talk to are still running on spreadsheets or nothing. We set up GoHighLevel as your all-in-one platform: lead capture, booking, follow-up, reviews, everything.",
     bullets: [
       "Speed-to-lead: respond to every new lead in under 60 seconds",
       "Missed-call text-back: never lose a job to voicemail again",
@@ -106,7 +106,7 @@ export default async function PlatformLandingPage({ params }: { params: Promise<
           </p>
           {noReplace && (
             <p className="inline-block bg-orange-brand/10 border border-orange-brand/30 text-orange-brand text-sm px-4 py-2 rounded-lg mb-6">
-              Your techs never touch anything new. We add on top — zero disruption.
+              Your techs never touch anything new. We add on top. Zero disruption.
             </p>
           )}
           <div className="flex flex-col sm:flex-row gap-4">
@@ -114,7 +114,7 @@ export default async function PlatformLandingPage({ params }: { params: Promise<
               href={`/qualify?platform=${fsm}`}
               className="inline-flex items-center gap-2 bg-orange-brand text-white font-bold px-8 py-4 rounded-xl hover:bg-orange-brand-hover transition-colors text-lg"
             >
-              See if it&apos;s a fit — 2 minutes <ArrowRight size={18} />
+              See if it&apos;s a fit in 2 minutes <ArrowRight size={18} />
             </Link>
             <Link
               href="/demo/calendar"
@@ -150,12 +150,12 @@ export default async function PlatformLandingPage({ params }: { params: Promise<
           <div className="max-w-3xl mx-auto text-center">
             <Eyebrow className="text-orange-brand">THE BRIDGE NOBODY ELSE BUILT</Eyebrow>
             <h2 className="text-3xl font-bold text-white mb-4">
-              Automations that fire on real job data — not form fills.
+              Automations that fire on real job data, not form fills.
             </h2>
             <p className="text-gray-300 text-lg leading-relaxed">
               When a job is completed in {label}, our Zapier bridge fires a review request.
               When a quote is sent, the follow-up sequence starts automatically. Your team
-              changes nothing — the bridge reads the events they&apos;re already creating.
+              changes nothing. The bridge reads the events they&apos;re already creating.
             </p>
           </div>
         </Section>

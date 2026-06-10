@@ -6,7 +6,7 @@ import { TrendingUp, Zap, Bot } from "lucide-react";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "ChrisAlchemy builds the growth layer home services owners actually need — AI automation that connects to the field, not just the funnel.",
+    "ChrisAlchemy builds the growth layer home services owners actually need. AI automation that connects to the field, not just the funnel.",
 };
 
 const industries = [
@@ -30,7 +30,7 @@ export default function AboutPage() {
           <p className="text-gray-300 text-lg max-w-2xl leading-relaxed">
             ChrisAlchemy Consulting helps HVAC, plumbing, electrical, roofing, landscaping,
             and pest control companies capture every lead, book more jobs, and win back
-            customers — with automation that runs itself.
+            customers, with automation that runs itself.
           </p>
         </div>
       </section>
@@ -42,7 +42,7 @@ export default function AboutPage() {
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">Why we exist.</h2>
           <p className="text-gray-body text-lg leading-relaxed">
             Most home services businesses lose revenue not because they&apos;re bad at the
-            work — but because leads fall through the cracks. Calls go unanswered, quotes go
+            work, but because leads fall through the cracks. Calls go unanswered, quotes go
             cold, and past customers are forgotten. We productized the fix: a pre-built AI
             automation system that plugs into the way you already run your business.
           </p>
@@ -89,11 +89,11 @@ export default function AboutPage() {
         <div className="max-w-3xl mx-auto">
           <Eyebrow>THE PARTNERSHIP</Eyebrow>
           <h2 className="text-3xl md:text-4xl font-bold text-navy mb-6">
-            Strategy and build — all done for you.
+            Strategy and build: all done for you.
           </h2>
           <p className="text-gray-body text-lg leading-relaxed">
             ChrisAlchemy owns your strategy, onboarding, and relationship. Our team handles
-            all technical buildout, integrations, and ongoing support — so everything is done
+            all technical buildout, integrations, and ongoing support, so everything is done
             for you, fast and right.
           </p>
         </div>

@@ -19,15 +19,15 @@ export async function generateMetadata({ params }: { params: Promise<Params> }):
   const label = TRADE_LABELS[trade];
   if (!label) return {};
   return {
-    title: `AI Automation for ${label} Companies — ChrisAlchemy`,
+    title: `AI Automation for ${label} Companies: ChrisAlchemy`,
     description: `Stop losing jobs to missed calls and dead leads. ChrisAlchemy adds AI follow-up, review generation, and customer reactivation to your ${label.toLowerCase()} business.`,
   };
 }
 
 const TRADE_COPY: Record<string, { headline: string; sub: string; pains: string[] }> = {
   hvac: {
-    headline: "HVAC companies stop losing 3–5 jobs a week to missed calls.",
-    sub: "Speed-to-lead, missed-call text-back, and estimate follow-up — automated on top of ServiceTitan, Jobber, or HouseCall Pro. Your techs never touch anything new.",
+    headline: "HVAC companies stop losing 3 to 5 jobs a week to missed calls.",
+    sub: "Speed-to-lead, missed-call text-back, and estimate follow-up, automated on top of ServiceTitan, Jobber, or HouseCall Pro. Your techs never touch anything new.",
     pains: ["After-hours calls that go to voicemail", "Quotes that go cold after 3 days", "Customers who book seasonally and then go quiet"],
   },
   plumbing: {
@@ -42,7 +42,7 @@ const TRADE_COPY: Record<string, { headline: string; sub: string; pains: string[
   },
   roofing: {
     headline: "Roofing companies: win more jobs from the same lead volume.",
-    sub: "Speed-to-lead and estimate follow-up — the two biggest revenue leaks in roofing, automated.",
+    sub: "Speed-to-lead and estimate follow-up: the two biggest revenue leaks in roofing, automated.",
     pains: ["Competitors respond faster and win the job", "Storm season leads that go cold", "Low review count hurting trust with homeowners"],
   },
   landscaping: {
@@ -52,7 +52,7 @@ const TRADE_COPY: Record<string, { headline: string; sub: string; pains: string[
   },
   pest_control: {
     headline: "Pest control companies: automate renewals and stop losing recurring customers.",
-    sub: "Membership renewal flows, reactivation campaigns, and review generation — all running automatically.",
+    sub: "Membership renewal flows, reactivation campaigns, and review generation, all running automatically.",
     pains: ["Annual contract customers who lapse", "No review system after every service", "Slow follow-up on new quote requests"],
   },
 };
@@ -80,7 +80,7 @@ export default async function TradeLandingPage({ params }: { params: Promise<Par
             href={`/qualify?trade=${trade}`}
             className="inline-flex items-center gap-2 bg-orange-brand text-white font-bold px-8 py-4 rounded-xl hover:bg-orange-brand-hover transition-colors text-lg"
           >
-            See if it&apos;s a fit — 2 minutes <ArrowRight size={18} />
+            See if it&apos;s a fit in 2 minutes <ArrowRight size={18} />
           </Link>
         </div>
       </section>

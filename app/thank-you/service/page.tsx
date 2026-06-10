@@ -26,7 +26,7 @@ export default function ServiceThankYouPage() {
             "Check your email for your receipt and welcome message.",
             "We'll reach out within one business day to schedule your 20-minute onboarding call.",
             "Our build team configures and connects everything.",
-            "Your system goes live within 5–7 business days.",
+            "Your system goes live within 5 to 7 business days.",
           ].map((step, i) => (
             <li key={step} className="flex items-start gap-4 bg-white rounded-xl border border-gray-200 shadow-sm px-5 py-4">
               <span className="w-8 h-8 rounded-full bg-orange-brand text-white font-bold text-sm flex items-center justify-center shrink-0">
