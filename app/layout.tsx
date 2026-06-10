@@ -1,0 +1,58 @@
+import type { Metadata } from "next";
+import { Inter } from "next/font/google";
+import { Suspense } from "react";
+import "./globals.css";
+import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
+import AttributionInit from "@/components/AttributionInit";
+
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "ChrisAlchemy Consulting — AI Automation for Home Services",
+    template: "%s | ChrisAlchemy Consulting",
+  },
+  description:
+    "Stop losing jobs to missed calls and dead leads. ChrisAlchemy adds an AI-powered follow-up, booking, and review system to your home services business. Powered by GoHighLevel.",
+  keywords: [
+    "home services automation",
+    "HVAC automation",
+    "plumbing CRM",
+    "GoHighLevel home services",
+    "missed call text back",
+    "AI voice agent",
+    "field service automation",
+  ],
+  openGraph: {
+    title: "ChrisAlchemy Consulting — AI Automation for Home Services",
+    description:
+      "Stop losing 3–5 jobs a month to missed calls and dead leads. The GHL layer built for the field, not just the funnel.",
+    type: "website",
+    locale: "en_US",
+    siteName: "ChrisAlchemy Consulting",
+  },
+};
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return (
+    <html lang="en" className={inter.variable}>
+      <body className="antialiased flex flex-col min-h-screen">
+        <Nav />
+        <Suspense fallback={null}>
+          <AttributionInit />
+        </Suspense>
+        <main className="flex-1">{children}</main>
+        <Footer />
+      </body>
+    </html>
+  );
+}

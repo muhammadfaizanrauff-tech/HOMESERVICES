@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  /* Brand colors */
+  --color-navy: #1B3A5B;
+  --color-navy-dark: #14283D;
+  --color-orange-brand: #E08A2B;
+  --color-orange-brand-hover: #C97A20;
+  --color-orange-bright: #E8941F;
+  --color-green-brand: #2E9E6B;
+  --color-blue-brand: #2C6FB5;
+  --color-purple-brand: #6B4FA0;
+
+  /* Neutrals */
+  --color-gray-light: #F4F6F8;
+  --color-gray-muted: #6B7785;
+  --color-gray-body: #2B2B2B;
+
+  /* Font */
+  --font-sans: var(--font-inter), "Inter", system-ui, sans-serif;
+}
+
+body {
+  color: #2B2B2B;
+  background: #ffffff;
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+/* Prevent iOS Safari from zooming on input focus (font-size < 16px triggers zoom) */
+input, select, textarea {
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+:focus-visible {
+  outline: 2px solid #E08A2B;
+  outline-offset: 2px;
+}
