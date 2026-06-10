@@ -21,9 +21,28 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-navy py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <p className="text-xs font-bold tracking-wide sm:tracking-widest uppercase text-orange-brand mb-3 leading-relaxed">
-            HVAC · Plumbing · Electrical · Roofing · Landscaping · Pest Control
-          </p>
+          <div className="flex flex-wrap gap-x-3 gap-y-1 mb-3">
+            {[
+              { label: "HVAC",         slug: "hvac" },
+              { label: "Plumbing",     slug: "plumbing" },
+              { label: "Electrical",   slug: "electrical" },
+              { label: "Roofing",      slug: "roofing" },
+              { label: "Landscaping",  slug: "landscaping" },
+              { label: "Pest Control", slug: "pest_control" },
+            ].map((t, i, arr) => (
+              <span key={t.slug} className="flex items-center gap-3">
+                <Link
+                  href={`/for/${t.slug}`}
+                  className="text-xs font-bold tracking-widest uppercase text-orange-brand hover:text-white transition-colors"
+                >
+                  {t.label}
+                </Link>
+                {i < arr.length - 1 && (
+                  <span className="text-orange-brand/40 text-xs">·</span>
+                )}
+              </span>
+            ))}
+          </div>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-3xl mb-6">
             The AI follow-up layer for home-services companies that are done losing jobs to voicemail.
           </h1>

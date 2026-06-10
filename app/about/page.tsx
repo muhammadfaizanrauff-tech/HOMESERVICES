@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import Section, { Eyebrow } from "@/components/Section";
 import CTABanner from "@/components/CTABanner";
 import { TrendingUp, Zap, Bot } from "lucide-react";
@@ -10,12 +11,12 @@ export const metadata: Metadata = {
 };
 
 const industries = [
-  "HVAC",
-  "Plumbing",
-  "Electrical",
-  "Roofing",
-  "Landscaping",
-  "Pest Control",
+  { label: "HVAC",        slug: "hvac" },
+  { label: "Plumbing",    slug: "plumbing" },
+  { label: "Electrical",  slug: "electrical" },
+  { label: "Roofing",     slug: "roofing" },
+  { label: "Landscaping", slug: "landscaping" },
+  { label: "Pest Control",slug: "pest_control" },
 ];
 
 export default function AboutPage() {
@@ -110,12 +111,13 @@ export default function AboutPage() {
         </div>
         <div className="flex flex-wrap gap-3 justify-center">
           {industries.map((ind) => (
-            <span
-              key={ind}
-              className="bg-white border border-gray-200 rounded-full px-5 py-2 text-navy font-semibold text-sm shadow-sm"
+            <Link
+              key={ind.slug}
+              href={`/for/${ind.slug}`}
+              className="bg-white border border-gray-200 rounded-full px-5 py-2 text-navy font-semibold text-sm shadow-sm hover:bg-orange-brand hover:text-white hover:border-orange-brand transition-colors"
             >
-              {ind}
-            </span>
+              {ind.label}
+            </Link>
           ))}
         </div>
       </Section>
