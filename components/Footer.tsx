@@ -59,9 +59,17 @@ export default function Footer() {
             >
               {CONTACT_EMAIL}
             </a>
-            <p className="text-xs text-gray-500 mt-4">
-              Powered by Our Team · Built for the trades.
-            </p>
+            <div className="mt-4">
+              <p className="text-xs text-gray-500 mb-1">Parent Company</p>
+              <a
+                href="https://chrisalchemyconsulting.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-gray-400 hover:text-white transition-colors"
+              >
+                chrisalchemyconsulting.com
+              </a>
+            </div>
           </div>
         </div>
 
