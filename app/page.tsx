@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Phone, FileText, Users, Zap, Clock, Star, TrendingUp, Bot } from "lucide-react";
+import {
+  ArrowRight, Phone, FileText, Users, Zap, Clock, Star, TrendingUp, Bot,
+  Wind, Droplets, Home as HomeIcon, Leaf, Bug,
+} from "lucide-react";
 import Section, { Eyebrow } from "@/components/Section";
 import Button from "@/components/Button";
 import CTABanner from "@/components/CTABanner";
@@ -8,6 +11,15 @@ import PricingCard from "@/components/PricingCard";
 import FAQItem from "@/components/FAQItem";
 import { plans } from "@/content/plans";
 import { faqs } from "@/content/faqs";
+
+const NICHES = [
+  { label: "HVAC",         slug: "hvac",         icon: Wind },
+  { label: "Plumbing",     slug: "plumbing",     icon: Droplets },
+  { label: "Electrical",   slug: "electrical",   icon: Zap },
+  { label: "Roofing",      slug: "roofing",      icon: HomeIcon },
+  { label: "Landscaping",  slug: "landscaping",  icon: Leaf },
+  { label: "Pest Control", slug: "pest_control", icon: Bug },
+];
 
 export const metadata: Metadata = {
   title: "ChrisAlchemy Consulting: Stop Losing Jobs to Missed Calls",
@@ -21,28 +33,6 @@ export default function HomePage() {
       {/* Hero */}
       <section className="bg-navy py-20 md:py-28">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap gap-x-3 gap-y-1 mb-3">
-            {[
-              { label: "HVAC",         slug: "hvac" },
-              { label: "Plumbing",     slug: "plumbing" },
-              { label: "Electrical",   slug: "electrical" },
-              { label: "Roofing",      slug: "roofing" },
-              { label: "Landscaping",  slug: "landscaping" },
-              { label: "Pest Control", slug: "pest_control" },
-            ].map((t, i, arr) => (
-              <span key={t.slug} className="flex items-center gap-3">
-                <Link
-                  href={`/for/${t.slug}`}
-                  className="text-xs font-bold tracking-widest uppercase text-orange-brand hover:text-white transition-colors"
-                >
-                  {t.label}
-                </Link>
-                {i < arr.length - 1 && (
-                  <span className="text-orange-brand/40 text-xs">·</span>
-                )}
-              </span>
-            ))}
-          </div>
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-extrabold text-white leading-tight max-w-3xl mb-6">
             The AI follow-up layer for home-services companies that are done losing jobs to voicemail.
           </h1>
@@ -70,6 +60,28 @@ export default function HomePage() {
           </p>
         </div>
       </section>
+
+      {/* Who We Serve */}
+      <Section>
+        <Eyebrow className="text-center block">Who We Serve</Eyebrow>
+        <h2 className="text-3xl md:text-4xl font-bold text-navy mb-10 text-center">
+          Built for your trade
+        </h2>
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-4">
+          {NICHES.map(({ label, slug, icon: Icon }) => (
+            <Link
+              key={slug}
+              href={`/for/${slug}`}
+              className="group flex flex-col items-center gap-3 bg-white rounded-xl border border-gray-200 p-6 text-center shadow-sm hover:border-orange-brand hover:shadow-md transition-all"
+            >
+              <span className="w-12 h-12 rounded-full bg-orange-brand/10 text-orange-brand flex items-center justify-center group-hover:bg-orange-brand group-hover:text-white transition-colors">
+                <Icon size={22} />
+              </span>
+              <span className="font-bold text-navy text-sm">{label}</span>
+            </Link>
+          ))}
+        </div>
+      </Section>
 
       {/* Pain Agitation */}
       <Section gray>
