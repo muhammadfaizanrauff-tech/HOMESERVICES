@@ -2,13 +2,16 @@
 // Components, forms, and analytics import from here — never hardcode strings.
 
 export const TRADE_LABELS: Record<string, string> = {
-  hvac:        "HVAC",
-  plumbing:    "Plumbing",
-  electrical:  "Electrical",
-  roofing:     "Roofing",
-  landscaping: "Landscaping",
-  pest_control:"Pest Control",
-  other:       "Other Trade",
+  hvac:         "HVAC",
+  plumbing:     "Plumbing",
+  electrical:   "Electrical",
+  roofing:      "Roofing",
+  landscaping:  "Landscaping",
+  pest_control: "Pest Control",
+  solar:        "Solar",
+  garage_doors: "Garage Doors",
+  junk_removal: "Junk Removal",
+  other:        "Other Trade",
 };
 
 export const FSM_LABELS: Record<string, string> = {

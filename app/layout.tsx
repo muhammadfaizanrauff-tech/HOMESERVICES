@@ -5,6 +5,7 @@ import "./globals.css";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import AttributionInit from "@/components/AttributionInit";
+import MobileCTABar from "@/components/MobileCTABar";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -13,6 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000"),
   title: {
     default: "ChrisAlchemy Consulting: AI Automation for Home Services",
     template: "%s | ChrisAlchemy Consulting",
@@ -52,6 +54,7 @@ export default function RootLayout({
         </Suspense>
         <main className="flex-1">{children}</main>
         <Footer />
+        <MobileCTABar />
       </body>
     </html>
   );

@@ -1,13 +1,16 @@
 import type { Metadata } from "next";
+import { Check } from "lucide-react";
 import Section, { Eyebrow } from "@/components/Section";
 import Button from "@/components/Button";
 import CTABanner from "@/components/CTABanner";
 import PricingCard from "@/components/PricingCard";
 import ModuleCard from "@/components/ModuleCard";
 import FAQItem from "@/components/FAQItem";
+import ImagePlaceholder from "@/components/ImagePlaceholder";
 import { plans } from "@/content/plans";
 import { modules } from "@/content/modules";
 import { faqs } from "@/content/faqs";
+import { integrations, TIER_META } from "@/content/integrations";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -16,12 +19,23 @@ export const metadata: Metadata = {
     "12 automation modules, 3 plans, one system that runs itself. AI follow-up, booking, and review automation for HVAC, plumbing, and home services.",
 };
 
-const integrations = [
-  "ServiceTitan",
-  "Jobber",
-  "HouseCall Pro",
-  "FieldEdge",
+const PREVIEW_INTEGRATIONS = integrations.slice(0, 10);
+
+const COMPARE_ROWS = [
+  ...modules.map((m) => ({ label: m.title, tier: m.tier })),
+  { label: "Integrations included", tier: "META" as const },
+  { label: "Support", tier: "META" as const },
 ];
+
+const TIER_RANK: Record<"CORE" | "GROWTH" | "PREMIUM", number> = {
+  CORE: 1,
+  GROWTH: 2,
+  PREMIUM: 3,
+};
+
+function includesTier(planTier: "CORE" | "GROWTH" | "PREMIUM", moduleTier: "CORE" | "GROWTH" | "PREMIUM") {
+  return TIER_RANK[planTier] >= TIER_RANK[moduleTier];
+}
 
 export default function ServicesPage() {
   const coreModules = modules.filter((m) => m.tier === "CORE");
@@ -113,7 +127,7 @@ export default function ServicesPage() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 items-stretch">
           {plans.map((plan) => (
             <PricingCard key={plan.id} plan={plan} />
           ))}
@@ -125,6 +139,59 @@ export default function ServicesPage() {
             Book a free demo →
           </Link>
         </p>
+      </Section>
+
+      {/* Plan comparison table */}
+      <Section id="compare">
+        <div className="text-center mb-8">
+          <Eyebrow>COMPARE</Eyebrow>
+          <h2 className="text-3xl font-bold text-navy">Compare full plan details.</h2>
+        </div>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[640px] border-collapse">
+            <thead>
+              <tr>
+                <th className="text-left text-sm font-semibold text-gray-muted pb-4 pr-4 border-b border-gray-200">
+                  Feature
+                </th>
+                {plans.map((plan) => (
+                  <th
+                    key={plan.id}
+                    className="text-center text-sm font-bold text-navy pb-4 px-4 border-b border-gray-200"
+                  >
+                    {plan.name}
+                  </th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {COMPARE_ROWS.map((row) => (
+                <tr key={row.label} className="border-b border-gray-100">
+                  <td className="text-sm text-gray-body py-3 pr-4">{row.label}</td>
+                  {plans.map((plan) => (
+                    <td key={plan.id} className="text-center py-3 px-4">
+                      {row.tier === "META" ? (
+                        <span className="text-xs text-gray-muted">
+                          {row.label === "Support"
+                            ? plan.id === "elite"
+                              ? "Dedicated manager"
+                              : plan.id === "pro"
+                              ? "Priority + monthly call"
+                              : "Email + chat"
+                            : plan.integrationsIncluded}
+                        </span>
+                      ) : includesTier(plan.tier, row.tier) ? (
+                        <Check size={18} className="text-green-brand mx-auto" />
+                      ) : (
+                        <span className="text-gray-300">—</span>
+                      )}
+                    </td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </Section>
 
       {/* Two tracks */}
@@ -171,15 +238,39 @@ export default function ServicesPage() {
             We add the AI layer on top, or migrate you to a full system. Your call.
           </p>
         </div>
-        <div className="flex flex-wrap gap-4 justify-center">
-          {integrations.map((name) => (
-            <div
-              key={name}
-              className="bg-white border border-gray-200 rounded-xl px-6 py-3 font-semibold text-navy shadow-sm text-sm"
-            >
-              {name}
-            </div>
-          ))}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 mb-8">
+          {PREVIEW_INTEGRATIONS.map((i) => {
+            const tierMeta = TIER_META[i.tier];
+            return (
+              <div
+                key={i.slug}
+                className="bg-white border border-gray-200 rounded-xl px-4 py-3 shadow-sm text-center flex flex-col items-center gap-1.5"
+              >
+                <span className="font-semibold text-navy text-sm">{i.name}</span>
+                <span className={`text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider ${tierMeta.bg} ${tierMeta.text}`}>
+                  {tierMeta.label}
+                </span>
+              </div>
+            );
+          })}
+        </div>
+        <div className="text-center">
+          <Link href="/integrations" className="text-orange-brand font-semibold hover:underline">
+            See all 24 integrations →
+          </Link>
+        </div>
+      </Section>
+
+      {/* What a build looks like */}
+      <Section>
+        <div className="text-center mb-8">
+          <Eyebrow>WHAT A BUILD LOOKS LIKE</Eyebrow>
+          <h2 className="text-3xl font-bold text-navy">Inside a live GHL build.</h2>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <ImagePlaceholder label="GHL workflow builder showing the speed-to-lead automation" ratio="4/3" />
+          <ImagePlaceholder label="Unified conversations inbox with SMS thread booking a job" ratio="4/3" />
+          <ImagePlaceholder label="GHL dashboard with pipeline + review stats" ratio="4/3" />
         </div>
       </Section>
 

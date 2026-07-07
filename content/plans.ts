@@ -8,6 +8,7 @@ export type Plan = {
   monthly: number;
   popular: boolean;
   features: string[];
+  integrationsIncluded: string;
 };
 
 export const plans: Plan[] = [
@@ -28,6 +29,7 @@ export const plans: Plan[] = [
       "GHL sub-account included",
       "Email + chat support",
     ],
+    integrationsIncluded: "1 One-Click integration included",
   },
   {
     id: "pro",
@@ -46,6 +48,7 @@ export const plans: Plan[] = [
       "After-hours coverage",
       "Priority support + monthly call",
     ],
+    integrationsIncluded: "Up to 3 integrations (One-Click or Standard)",
   },
   {
     id: "elite",
@@ -64,6 +67,7 @@ export const plans: Plan[] = [
       "Smart lead qualification",
       "Dedicated account manager",
     ],
+    integrationsIncluded: "Unlimited integrations + custom API builds",
   },
 ];
 

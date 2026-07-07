@@ -34,3 +34,5 @@ npm-debug.log*
 # misc
 *.tsbuildinfo
 next-env.d.ts
+.vercel
+.env*

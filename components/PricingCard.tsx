@@ -23,12 +23,12 @@ export default function PricingCard({ plan, compact = false }: PricingCardProps)
       } bg-white overflow-hidden flex flex-col`}
     >
       {plan.popular && (
-        <div className="bg-blue-brand text-white text-xs font-bold text-center py-1.5 tracking-widest uppercase">
+        <div className="absolute top-0 left-0 right-0 bg-blue-brand text-white text-xs font-bold text-center py-1.5 tracking-widest uppercase">
           Most Popular
         </div>
       )}
 
-      <div className="p-5 md:p-8 flex flex-col flex-1">
+      <div className={`p-5 md:p-8 flex flex-col flex-1 ${plan.popular ? "pt-11 md:pt-14" : ""}`}>
         {/* Tier badge */}
         <span
           className={`inline-block text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider mb-4 self-start ${tierBg[plan.tier]}`}
@@ -48,6 +48,10 @@ export default function PricingCard({ plan, compact = false }: PricingCardProps)
             <span className="text-navy font-bold">${plan.monthly}/mo</span>
           </div>
         </div>
+
+        <p className="text-xs font-semibold text-navy bg-gray-light rounded-lg px-3 py-2 mb-5 inline-block self-start">
+          {plan.integrationsIncluded}
+        </p>
 
         {!compact && (
           <ul className="space-y-2.5 mb-6 md:mb-8 flex-1">

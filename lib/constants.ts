@@ -1,6 +1,11 @@
 export const SITE_NAME = "ChrisAlchemy Consulting";
 export const TAGLINE = "The GHL layer built for the field, not just the funnel.";
 export const CONTACT_EMAIL = "george@chrisalchemyconsulting.com";
+export const PARENT_SITE_URL = "https://chrisalchemyconsulting.com";
+
+export function parentSiteUrl(utmContent: string): string {
+  return `${PARENT_SITE_URL}?utm_source=home-services-funnel&utm_medium=website&utm_content=${utmContent}`;
+}
 export const INDUSTRIES = [
   "HVAC",
   "Plumbing",

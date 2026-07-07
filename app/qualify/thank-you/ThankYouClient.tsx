@@ -2,10 +2,17 @@
 
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
-import { CheckCircle, Calendar, Mail, ArrowRight } from "lucide-react";
+import { CheckCircle, Calendar, Mail, ArrowRight, Cable } from "lucide-react";
 import { TRACK_LABELS, TRACK_DESCRIPTIONS, FSM_LABELS } from "@/lib/catalog";
+import { integrations } from "@/content/integrations";
 import { track } from "@/lib/analytics";
 import { useEffect } from "react";
+
+const FSM_TO_INTEGRATION_SLUG: Record<string, string> = {
+  servicetitan: "servicetitan",
+  jobber: "jobber",
+  housecall_pro: "housecall-pro",
+};
 
 export default function ThankYouClient() {
   const params   = useSearchParams();
@@ -15,6 +22,10 @@ export default function ThankYouClient() {
   const platform = params.get("platform") ?? "";
   const firstName = params.get("name") ?? "there";
   const bookingUrl = params.get("bookingUrl") ?? process.env.NEXT_PUBLIC_GHL_CALENDAR_URL ?? "";
+
+  const matchedIntegration = integrations.find(
+    (i) => i.slug === FSM_TO_INTEGRATION_SLUG[platform],
+  );
 
   const isHot  = temp === "hot";
   const isWarm = temp === "warm";
@@ -80,6 +91,19 @@ export default function ThankYouClient() {
           {TRACK_DESCRIPTIONS[salesTrack]}
         </p>
       </div>
+
+      {/* Matched integration */}
+      {matchedIntegration && (
+        <div className="bg-orange-brand/10 border border-orange-brand/30 rounded-2xl p-5 mb-6 flex items-start gap-3">
+          <Cable size={20} className="text-orange-brand shrink-0 mt-0.5" />
+          <div>
+            <p className="text-white font-semibold text-sm mb-1">
+              We already connect to {matchedIntegration.name}.
+            </p>
+            <p className="text-gray-400 text-sm leading-relaxed">{matchedIntegration.trigger}</p>
+          </div>
+        </div>
+      )}
 
       {/* Next steps by temperature */}
       {(isHot || isWarm) && (

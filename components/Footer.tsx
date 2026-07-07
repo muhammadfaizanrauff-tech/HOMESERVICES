@@ -4,6 +4,9 @@ import { CONTACT_EMAIL, TAGLINE } from "@/lib/constants";
 const links = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Integrations", href: "/integrations" },
+  { label: "Results", href: "/results" },
+  { label: "ROI Calculator", href: "/roi-calculator" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
   { label: "Book a Demo", href: "/demo/calendar" },
@@ -11,7 +14,7 @@ const links = [
 
 export default function Footer() {
   return (
-    <footer className="bg-navy-dark text-gray-300">
+    <footer className="bg-navy-dark text-gray-300 pb-16 md:pb-0">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
           {/* Brand */}
