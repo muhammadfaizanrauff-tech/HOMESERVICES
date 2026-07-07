@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import Section, { Eyebrow } from "@/components/Section";
 import CTABanner from "@/components/CTABanner";
-import ImagePlaceholder from "@/components/ImagePlaceholder";
+import Image from "next/image";
 import { TrendingUp, Zap, Bot, Compass, Wrench, Building2 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -53,10 +53,14 @@ export default function AboutPage() {
               automation system that plugs into the way you already run your business.
             </p>
           </div>
-          <ImagePlaceholder
-            label="founder/team photo, casual professional, ideally on-site with a client crew"
-            ratio="4/5"
-          />
+          <div className="relative w-full rounded-xl overflow-hidden" style={{ aspectRatio: "4/5" }}>
+            <Image
+              src="/images/founder-george-georgiev.jpg"
+              alt="George Georgiev, founder of ChrisAlchemy Consulting"
+              fill
+              className="object-cover"
+            />
+          </div>
         </div>
       </Section>
 
