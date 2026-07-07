@@ -13,8 +13,24 @@ const inter = Inter({
   display: "swap",
 });
 
+function resolveSiteUrl(): URL {
+  const raw = process.env.NEXT_PUBLIC_SITE_URL;
+  if (raw) {
+    try {
+      return new URL(raw);
+    } catch {
+      try {
+        return new URL(`https://${raw}`);
+      } catch {
+        // fall through to default
+      }
+    }
+  }
+  return new URL("http://localhost:3000");
+}
+
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000"),
+  metadataBase: resolveSiteUrl(),
   title: {
     default: "ChrisAlchemy Consulting: AI Automation for Home Services",
     template: "%s | ChrisAlchemy Consulting",
