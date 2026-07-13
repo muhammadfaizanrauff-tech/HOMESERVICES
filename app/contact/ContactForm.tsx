@@ -6,6 +6,7 @@ import { z } from "zod";
 import { INDUSTRIES, SOFTWARE_OPTIONS } from "@/lib/constants";
 import { useState } from "react";
 import { CheckCircle } from "lucide-react";
+import { postContactLeadToGHL } from "@/lib/leadClient";
 
 const schema = z.object({
   name: z.string().min(2, "Full name is required"),
@@ -31,14 +32,19 @@ export default function ContactForm() {
 
   async function onSubmit(data: FormData) {
     setError("");
-    const res = await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, source: "contact" }),
-    });
-    if (res.ok) {
+    try {
+      await postContactLeadToGHL({
+        source: "contact",
+        name: data.name,
+        businessName: data.businessName,
+        email: data.email,
+        phone: data.phone,
+        industry: data.industry,
+        currentSoftware: data.currentSoftware,
+        notes: data.message,
+      });
       setSubmitted(true);
-    } else {
+    } catch {
       setError("Something went wrong. Please try again or email us directly.");
     }
   }

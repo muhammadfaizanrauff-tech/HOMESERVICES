@@ -6,6 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { useState } from "react";
 import { INDUSTRIES, SOFTWARE_OPTIONS, TECH_COUNT_OPTIONS } from "@/lib/constants";
+import { postContactLeadToGHL } from "@/lib/leadClient";
 
 const schema = z.object({
   name: z.string().min(2, "Full name is required"),
@@ -32,10 +33,16 @@ export default function DemoDetailsForm() {
 
   async function onSubmit(data: FormData) {
     setError("");
-    await fetch("/api/lead", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...data, source: "demo" }),
+    await postContactLeadToGHL({
+      source: "demo",
+      name: data.name,
+      businessName: data.businessName,
+      email: data.email,
+      phone: data.phone,
+      industry: data.industry,
+      currentSoftware: data.currentSoftware,
+      techCount: data.techCount,
+      painPoints: data.painPoints,
     }).catch(() => {});
     router.push("/thank-you/demo");
   }

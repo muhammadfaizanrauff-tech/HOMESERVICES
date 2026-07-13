@@ -8,6 +8,7 @@ import { TRADE_LABELS, FSM_LABELS, FSM_DESCRIPTIONS, TECH_BAND_LABELS,
 import { NO_REPLACE_PLATFORMS } from "@/lib/fsm";
 import { getAttribution } from "@/lib/attribution";
 import { track } from "@/lib/analytics";
+import { scoreFit, submitQualifierLead } from "@/lib/leadClient";
 
 // ── Types ──────────────────────────────────────────────────────────────────
 
@@ -136,24 +137,16 @@ export default function QualifierClient() {
     track({ event: "qualifier_start" });
   }, []);
 
-  // Fetch provisional fit after pain step
+  // Compute provisional fit after pain step (runs entirely client-side)
   const fetchFit = useCallback(async (a: Answers) => {
     try {
-      const res = await fetch("/api/lead/score", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fsmPlatform: a.fsmPlatform,
-          techCount: a.techCount,
-          platformDepth: a.platformDepth || undefined,
-          primaryPain: a.primaryPain,
-          source: "direct",
-        }),
+      const data = scoreFit({
+        fsmPlatform: a.fsmPlatform,
+        techCount: a.techCount,
+        platformDepth: a.platformDepth || undefined,
+        primaryPain: a.primaryPain,
       });
-      if (res.ok) {
-        const data = await res.json() as ProvisionalFit;
-        setFit(data);
-      }
+      setFit(data as ProvisionalFit);
     } catch { /* non-fatal */ }
   }, []);
 
@@ -207,38 +200,24 @@ export default function QualifierClient() {
     setError("");
     const attribution = getAttribution();
     try {
-      const res = await fetch("/api/lead", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          fullName:        answers.fullName,
-          email:           answers.email,
-          phone:           answers.phone || undefined,
-          businessName:    answers.businessName,
-          website:         answers.website || undefined,
-          city:            answers.city || undefined,
-          state:           answers.usState || undefined,
-          trade:           answers.trade || undefined,
-          fsmPlatform:     answers.fsmPlatform,
-          techCount:       answers.techCount,
-          platformDepth:   answers.platformDepth || undefined,
-          primaryPain:     answers.primaryPain,
-          painNotes:       answers.painNotes || undefined,
-          avgJobTicket:    answers.avgJobTicket ? Number(answers.avgJobTicket) : undefined,
-          timelineToStart: answers.timelineToStart || undefined,
-          consentSms:      answers.consentSms,
-          consentEmail:    answers.consentEmail,
-          consentText:     "I agree to receive calls/texts/emails from ChrisAlchemy about my request.",
-          ...attribution,
-        }),
+      const data = await submitQualifierLead({
+        fullName:        answers.fullName,
+        email:           answers.email,
+        phone:           answers.phone || undefined,
+        businessName:    answers.businessName,
+        website:         answers.website || undefined,
+        city:            answers.city || undefined,
+        state:           answers.usState || undefined,
+        trade:           answers.trade || undefined,
+        fsmPlatform:     answers.fsmPlatform,
+        techCount:       answers.techCount,
+        platformDepth:   answers.platformDepth || undefined,
+        primaryPain:     answers.primaryPain,
+        painNotes:       answers.painNotes || undefined,
+        avgJobTicket:    answers.avgJobTicket ? Number(answers.avgJobTicket) : undefined,
+        timelineToStart: answers.timelineToStart || undefined,
+        source:          attribution.source,
       });
-
-      if (!res.ok) throw new Error("Submission failed");
-
-      const data = await res.json() as {
-        leadId: string; salesTrack: string; leadTemperature: string;
-        pitchAngle: string; bookingUrl?: string;
-      };
 
       track({ event: "lead_created", leadId: data.leadId, track: data.salesTrack,
               temperature: data.leadTemperature, score: 0 });
